@@ -12,6 +12,44 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: Theme(
+        data: ThemeData(useMaterial3: false),
+        child: BottomAppBar(
+          color: Colors.teal,
+          shape: const CircularNotchedRectangle(),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Spacer(),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.add_alert),
+                color: Colors.white,
+              ),
+              const Spacer(),
+              const Spacer(),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.turned_in),
+                color: Colors.white,
+              ),
+              const Spacer(),
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.teal,
+        elevation: 5,
+        onPressed: () {},
+        shape: const CircleBorder(),
+        child: const Icon(
+          Icons.home,
+          color: Colors.white,
+        ),
+      ),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -34,7 +72,14 @@ class _HomePageState extends State<HomePage> {
                   ))
             ],
           ),
-          Header()
+          Header(),
+          SliverList(
+              delegate: SliverChildListDelegate([
+            const Text(
+              'Hamburger',
+              style: TextStyle(fontSize: 300),
+            )
+          ]))
         ],
       ),
     );
