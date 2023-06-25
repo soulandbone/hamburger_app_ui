@@ -12,36 +12,41 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
+      extendBody:
+          true, // this makes it so that the nothced part of the bottomAppBar be translucent of the parts in which it should be transparent
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: Theme(
         data: ThemeData(useMaterial3: false),
-        child: BottomAppBar(
-          color: Colors.teal,
-          shape: const CircularNotchedRectangle(),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Spacer(),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.add_alert),
-                color: Colors.white,
-              ),
-              const Spacer(),
-              const Spacer(),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.turned_in),
-                color: Colors.white,
-              ),
-              const Spacer(),
-            ],
+        child: ClipRRect(
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(25)),
+          child: BottomAppBar(
+            color: Colors.teal,
+            shape:
+                const CircularNotchedRectangle(), // the effect that makes it to create a curved notch in the middle
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Spacer(),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.add_alert),
+                  color: Colors.white,
+                ),
+                const Spacer(),
+                const Spacer(),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.turned_in),
+                  color: Colors.white,
+                ),
+                const Spacer(),
+              ],
+            ),
           ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.teal,
+        //backgroundColor: Colors.amber, configured globally
         elevation: 5,
         onPressed: () {},
         shape: const CircleBorder(),

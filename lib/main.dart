@@ -16,6 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         appBarTheme: const AppBarTheme(color: Colors.teal, centerTitle: true),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+        floatingActionButtonTheme:
+            const FloatingActionButtonThemeData(backgroundColor: Colors.orange),
         useMaterial3: true,
       ),
       home: const HomePage(),
